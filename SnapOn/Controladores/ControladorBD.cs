@@ -12,13 +12,9 @@ namespace SnapOn
 {
     public class ControladorBD
     {
-        public static OperacionesBD opeBD;
-        public ControladorBD()
+        public static OperacionesBD opeBD = new OperacionesBD
         {
-            opeBD = new OperacionesBD();
-            opeBD.CadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["localhost"].ToString();
-            opeBD.CadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["localhost"].ToString();
-            opeBD.CadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["localhost"].ToString();
-        }
+            CadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["localhost"].ToString()
+        };
     }
 }

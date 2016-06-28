@@ -12,11 +12,9 @@ namespace SnapOn
 {
     public partial class Configuracion : Form
     {
-        public static ControladorBD controladorBD;
         public Configuracion()
         {
             InitializeComponent();
-            controladorBD = new ControladorBD();
             ConfiguracionInicial();
         }
 

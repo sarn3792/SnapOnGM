@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SnapOn.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="libmx.BaseDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -61,11 +64,18 @@
     <Compile Include="Controladores\CheckID.cs" />
     <Compile Include="Controladores\ComboboxController.cs" />
     <Compile Include="Controladores\ControladorBD.cs" />
+    <Compile Include="Controladores\GetItems.cs" />
     <Compile Include="Controladores\InsertNewColumn.cs" />
     <Compile Include="Controladores\InsertNewItem.cs" />
     <Compile Include="OperacionesGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SnapOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SnapOn.Designer.cs">
+      <DependentUpon>SnapOn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tablas\Grupos.cs" />
     <Compile Include="Tablas\Tablas.cs" />
     <EmbeddedResource Include="Configuracion.resx">
@@ -80,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SnapOn.resx">
+      <DependentUpon>SnapOn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

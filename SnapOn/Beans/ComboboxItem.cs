@@ -17,6 +17,11 @@ namespace SnapOn
             this.Value = value;
         }
 
+        public ComboboxItem()
+        {
+
+        }
+
         public override string ToString()
         {
             return Text;
