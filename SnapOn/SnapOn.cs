@@ -59,5 +59,29 @@ namespace SnapOn
                 cmbItem.Enabled = false;
             }
         }
+
+        private void rbCuentaEntidad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCuentaEntidad.Checked)
+            {
+
+            }
+        }
+
+        private void rbVistas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbVistas.Checked)
+            {
+
+            }
+        }
+
+        private void rbSQL_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSQL.Checked)
+            {
+
+            }
+        }
     }
 }
