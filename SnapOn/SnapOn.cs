@@ -28,6 +28,15 @@ namespace SnapOn
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
             cmbItem.Enabled = false;
+            pnlGrid.Visible = false;
+            gbTipo.Enabled = false;
+            pnlTipo.Enabled = false;
+            pnlTipo.Visible = false;
+
+            lblCuentaEntidad.Visible = false;
+            txtCuentaEntidad.Visible = false;
+            lblSQL.Visible = false;
+            txtQuery.Visible = false;
         }
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,9 +57,18 @@ namespace SnapOn
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             string value = (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString();
-            cmbItem.DataSource = (new GetItems(value)).GetItemByTable();
+            cmbItem.DataSource = (new GetItems(value)).GetItemByTable(); 
+            
             if (value != ComboboxDefaultValue.defaultValues.Value)
             {
+                gvMain.DataSource = (new GetTable(value)).GetDataSource();
+                HideDefaultColumnsInGrid();
+                pnlGrid.Visible = true;
+
+                gbTipo.Enabled = true;
+                pnlTipo.Visible = true;
+                pnlTipo.Enabled = true;
+
                 cmbItem.Enabled = true;
                 cmbItem.Focus();
             }
@@ -64,7 +82,14 @@ namespace SnapOn
         {
             if (rbCuentaEntidad.Checked)
             {
-
+                lblCuentaEntidad.Visible = true;
+                txtCuentaEntidad.Visible = true;
+                txtCuentaEntidad.Focus();
+            }
+            else
+            {
+                lblCuentaEntidad.Visible = false;
+                txtCuentaEntidad.Visible = false;
             }
         }
 
@@ -72,7 +97,11 @@ namespace SnapOn
         {
             if (rbVistas.Checked)
             {
-
+                pnlTipo.Enabled = false;
+            }
+            else
+            {
+                pnlTipo.Enabled = true;
             }
         }
 
@@ -80,8 +109,28 @@ namespace SnapOn
         {
             if (rbSQL.Checked)
             {
-
+                lblSQL.Visible = true;
+                txtQuery.Visible = true;
+                txtQuery.Focus();
             }
+            else
+            {
+                lblSQL.Visible = false;
+                txtQuery.Visible = false;
+            }
+        }
+
+        private void HideDefaultColumnsInGrid()
+        {
+            foreach (string item in GridDefaultValue.gridValues)
+            {
+                gvMain.Columns[item].Visible = false;
+            }
+        }
+
+        private void bntObtenerTipo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

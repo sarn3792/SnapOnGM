@@ -37,17 +37,29 @@
             this.lblItem = new System.Windows.Forms.Label();
             this.cmbItem = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTipo = new System.Windows.Forms.Panel();
+            this.txtCuentaEntidad = new System.Windows.Forms.TextBox();
+            this.lblTitlePnl = new System.Windows.Forms.Label();
+            this.pnlGrid = new System.Windows.Forms.Panel();
+            this.gvMain = new System.Windows.Forms.DataGridView();
             this.gbTipo = new System.Windows.Forms.GroupBox();
-            this.rbCuentaEntidad = new System.Windows.Forms.RadioButton();
-            this.rbVistas = new System.Windows.Forms.RadioButton();
             this.rbSQL = new System.Windows.Forms.RadioButton();
+            this.rbVistas = new System.Windows.Forms.RadioButton();
+            this.rbCuentaEntidad = new System.Windows.Forms.RadioButton();
+            this.txtQuery = new System.Windows.Forms.TextBox();
+            this.lblCuentaEntidad = new System.Windows.Forms.Label();
+            this.lblSQL = new System.Windows.Forms.Label();
+            this.bntObtenerTipo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.pnlTipo.SuspendLayout();
+            this.pnlGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
             this.gbTipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConfiguracion
             // 
-            this.btnConfiguracion.Location = new System.Drawing.Point(721, 12);
+            this.btnConfiguracion.Location = new System.Drawing.Point(1028, 12);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(80, 39);
             this.btnConfiguracion.TabIndex = 0;
@@ -69,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(340, 26);
+            this.label2.Location = new System.Drawing.Point(447, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
@@ -80,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 26);
+            this.label1.Location = new System.Drawing.Point(120, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
@@ -90,20 +102,20 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(343, 44);
+            this.cmbCategoria.Location = new System.Drawing.Point(450, 44);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(199, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(247, 21);
             this.cmbCategoria.TabIndex = 6;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // cmbGrupos
             // 
             this.cmbGrupos.FormattingEnabled = true;
-            this.cmbGrupos.Location = new System.Drawing.Point(64, 42);
+            this.cmbGrupos.Location = new System.Drawing.Point(123, 42);
             this.cmbGrupos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGrupos.Name = "cmbGrupos";
-            this.cmbGrupos.Size = new System.Drawing.Size(199, 21);
+            this.cmbGrupos.Size = new System.Drawing.Size(247, 21);
             this.cmbGrupos.TabIndex = 5;
             this.cmbGrupos.SelectedIndexChanged += new System.EventHandler(this.cmbGrupos_SelectedIndexChanged);
             // 
@@ -111,7 +123,7 @@
             // 
             this.lblItem.AutoSize = true;
             this.lblItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItem.Location = new System.Drawing.Point(609, 26);
+            this.lblItem.Location = new System.Drawing.Point(803, 24);
             this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(41, 16);
@@ -121,15 +133,19 @@
             // cmbItem
             // 
             this.cmbItem.FormattingEnabled = true;
-            this.cmbItem.Location = new System.Drawing.Point(612, 44);
+            this.cmbItem.Location = new System.Drawing.Point(806, 44);
             this.cmbItem.Margin = new System.Windows.Forms.Padding(2);
             this.cmbItem.Name = "cmbItem";
-            this.cmbItem.Size = new System.Drawing.Size(224, 21);
+            this.cmbItem.Size = new System.Drawing.Size(288, 21);
             this.cmbItem.TabIndex = 9;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.bntObtenerTipo);
+            this.panel1.Controls.Add(this.pnlTipo);
+            this.panel1.Controls.Add(this.lblTitlePnl);
+            this.panel1.Controls.Add(this.pnlGrid);
             this.panel1.Controls.Add(this.gbTipo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblItem);
@@ -139,8 +155,55 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(907, 530);
+            this.panel1.Size = new System.Drawing.Size(1223, 725);
             this.panel1.TabIndex = 11;
+            // 
+            // pnlTipo
+            // 
+            this.pnlTipo.Controls.Add(this.lblSQL);
+            this.pnlTipo.Controls.Add(this.lblCuentaEntidad);
+            this.pnlTipo.Controls.Add(this.txtCuentaEntidad);
+            this.pnlTipo.Controls.Add(this.txtQuery);
+            this.pnlTipo.Location = new System.Drawing.Point(48, 433);
+            this.pnlTipo.Name = "pnlTipo";
+            this.pnlTipo.Size = new System.Drawing.Size(1144, 119);
+            this.pnlTipo.TabIndex = 13;
+            // 
+            // txtCuentaEntidad
+            // 
+            this.txtCuentaEntidad.Location = new System.Drawing.Point(188, 29);
+            this.txtCuentaEntidad.Name = "txtCuentaEntidad";
+            this.txtCuentaEntidad.Size = new System.Drawing.Size(393, 20);
+            this.txtCuentaEntidad.TabIndex = 2;
+            // 
+            // lblTitlePnl
+            // 
+            this.lblTitlePnl.AutoSize = true;
+            this.lblTitlePnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitlePnl.Location = new System.Drawing.Point(45, 96);
+            this.lblTitlePnl.Name = "lblTitlePnl";
+            this.lblTitlePnl.Size = new System.Drawing.Size(37, 16);
+            this.lblTitlePnl.TabIndex = 0;
+            this.lblTitlePnl.Text = "Grid";
+            // 
+            // pnlGrid
+            // 
+            this.pnlGrid.Controls.Add(this.gvMain);
+            this.pnlGrid.Location = new System.Drawing.Point(48, 115);
+            this.pnlGrid.Name = "pnlGrid";
+            this.pnlGrid.Size = new System.Drawing.Size(1144, 177);
+            this.pnlGrid.TabIndex = 12;
+            // 
+            // gvMain
+            // 
+            this.gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvMain.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvMain.Location = new System.Drawing.Point(0, 0);
+            this.gvMain.Name = "gvMain";
+            this.gvMain.Size = new System.Drawing.Size(1144, 177);
+            this.gvMain.TabIndex = 1;
             // 
             // gbTipo
             // 
@@ -148,38 +211,12 @@
             this.gbTipo.Controls.Add(this.rbVistas);
             this.gbTipo.Controls.Add(this.rbCuentaEntidad);
             this.gbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gbTipo.Location = new System.Drawing.Point(238, 107);
+            this.gbTipo.Location = new System.Drawing.Point(348, 315);
             this.gbTipo.Name = "gbTipo";
             this.gbTipo.Size = new System.Drawing.Size(454, 101);
             this.gbTipo.TabIndex = 11;
             this.gbTipo.TabStop = false;
             this.gbTipo.Text = "Tipo de dato";
-            // 
-            // rbCuentaEntidad
-            // 
-            this.rbCuentaEntidad.AutoSize = true;
-            this.rbCuentaEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.rbCuentaEntidad.Location = new System.Drawing.Point(24, 37);
-            this.rbCuentaEntidad.Name = "rbCuentaEntidad";
-            this.rbCuentaEntidad.Size = new System.Drawing.Size(97, 17);
-            this.rbCuentaEntidad.TabIndex = 0;
-            this.rbCuentaEntidad.TabStop = true;
-            this.rbCuentaEntidad.Text = "Cuenta entidad";
-            this.rbCuentaEntidad.UseVisualStyleBackColor = true;
-            this.rbCuentaEntidad.CheckedChanged += new System.EventHandler(this.rbCuentaEntidad_CheckedChanged);
-            // 
-            // rbVistas
-            // 
-            this.rbVistas.AutoSize = true;
-            this.rbVistas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.rbVistas.Location = new System.Drawing.Point(192, 37);
-            this.rbVistas.Name = "rbVistas";
-            this.rbVistas.Size = new System.Drawing.Size(53, 17);
-            this.rbVistas.TabIndex = 1;
-            this.rbVistas.TabStop = true;
-            this.rbVistas.Text = "Vistas";
-            this.rbVistas.UseVisualStyleBackColor = true;
-            this.rbVistas.CheckedChanged += new System.EventHandler(this.rbVistas_CheckedChanged);
             // 
             // rbSQL
             // 
@@ -194,11 +231,75 @@
             this.rbSQL.UseVisualStyleBackColor = true;
             this.rbSQL.CheckedChanged += new System.EventHandler(this.rbSQL_CheckedChanged);
             // 
+            // rbVistas
+            // 
+            this.rbVistas.AutoSize = true;
+            this.rbVistas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.rbVistas.Location = new System.Drawing.Point(192, 37);
+            this.rbVistas.Name = "rbVistas";
+            this.rbVistas.Size = new System.Drawing.Size(53, 17);
+            this.rbVistas.TabIndex = 1;
+            this.rbVistas.TabStop = true;
+            this.rbVistas.Text = "Vistas";
+            this.rbVistas.UseVisualStyleBackColor = true;
+            this.rbVistas.CheckedChanged += new System.EventHandler(this.rbVistas_CheckedChanged);
+            // 
+            // rbCuentaEntidad
+            // 
+            this.rbCuentaEntidad.AutoSize = true;
+            this.rbCuentaEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.rbCuentaEntidad.Location = new System.Drawing.Point(24, 37);
+            this.rbCuentaEntidad.Name = "rbCuentaEntidad";
+            this.rbCuentaEntidad.Size = new System.Drawing.Size(97, 17);
+            this.rbCuentaEntidad.TabIndex = 0;
+            this.rbCuentaEntidad.TabStop = true;
+            this.rbCuentaEntidad.Text = "Cuenta entidad";
+            this.rbCuentaEntidad.UseVisualStyleBackColor = true;
+            this.rbCuentaEntidad.CheckedChanged += new System.EventHandler(this.rbCuentaEntidad_CheckedChanged);
+            // 
+            // txtQuery
+            // 
+            this.txtQuery.Location = new System.Drawing.Point(188, 29);
+            this.txtQuery.Multiline = true;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.Size = new System.Drawing.Size(934, 88);
+            this.txtQuery.TabIndex = 0;
+            // 
+            // lblCuentaEntidad
+            // 
+            this.lblCuentaEntidad.AutoSize = true;
+            this.lblCuentaEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCuentaEntidad.Location = new System.Drawing.Point(32, 35);
+            this.lblCuentaEntidad.Name = "lblCuentaEntidad";
+            this.lblCuentaEntidad.Size = new System.Drawing.Size(112, 16);
+            this.lblCuentaEntidad.TabIndex = 3;
+            this.lblCuentaEntidad.Text = "Cuenta entidad";
+            // 
+            // lblSQL
+            // 
+            this.lblSQL.AutoSize = true;
+            this.lblSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblSQL.Location = new System.Drawing.Point(64, 35);
+            this.lblSQL.Name = "lblSQL";
+            this.lblSQL.Size = new System.Drawing.Size(80, 16);
+            this.lblSQL.TabIndex = 4;
+            this.lblSQL.Text = "SQL query";
+            // 
+            // bntObtenerTipo
+            // 
+            this.bntObtenerTipo.Location = new System.Drawing.Point(1082, 602);
+            this.bntObtenerTipo.Name = "bntObtenerTipo";
+            this.bntObtenerTipo.Size = new System.Drawing.Size(88, 48);
+            this.bntObtenerTipo.TabIndex = 14;
+            this.bntObtenerTipo.Text = "Submit";
+            this.bntObtenerTipo.UseVisualStyleBackColor = true;
+            this.bntObtenerTipo.Click += new System.EventHandler(this.bntObtenerTipo_Click);
+            // 
             // SnapOn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 584);
+            this.ClientSize = new System.Drawing.Size(1223, 776);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnConfiguracion);
@@ -207,6 +308,10 @@
             this.Text = "SnapOn";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlTipo.ResumeLayout(false);
+            this.pnlTipo.PerformLayout();
+            this.pnlGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).EndInit();
             this.gbTipo.ResumeLayout(false);
             this.gbTipo.PerformLayout();
             this.ResumeLayout(false);
@@ -229,5 +334,14 @@
         private System.Windows.Forms.RadioButton rbSQL;
         private System.Windows.Forms.RadioButton rbVistas;
         private System.Windows.Forms.RadioButton rbCuentaEntidad;
+        private System.Windows.Forms.Panel pnlGrid;
+        private System.Windows.Forms.TextBox txtCuentaEntidad;
+        private System.Windows.Forms.DataGridView gvMain;
+        private System.Windows.Forms.Label lblTitlePnl;
+        private System.Windows.Forms.Panel pnlTipo;
+        private System.Windows.Forms.Label lblCuentaEntidad;
+        private System.Windows.Forms.TextBox txtQuery;
+        private System.Windows.Forms.Label lblSQL;
+        private System.Windows.Forms.Button bntObtenerTipo;
     }
 }

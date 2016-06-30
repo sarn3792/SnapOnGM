@@ -22,7 +22,7 @@ namespace SnapOn
 
             if (this.table != ComboboxDefaultValue.defaultValues.Value)
             {
-                this.table = this.table + "Items";
+                this.table += "Items";
                 string query = String.Format("Select * from {0}", table);
                 DataTable aux = ControladorBD.opeBD.QueryATab(query);
                 var aux2 = aux.AsEnumerable().Select(m => new ComboboxItem()
