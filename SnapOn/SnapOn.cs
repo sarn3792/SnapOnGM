@@ -62,6 +62,7 @@ namespace SnapOn
             if (value != ComboboxDefaultValue.defaultValues.Value)
             {
                 gvMain.DataSource = (new GetTable(value)).GetDataSource();
+
                 HideDefaultColumnsInGrid();
                 pnlGrid.Visible = true;
 
