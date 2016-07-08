@@ -24,7 +24,8 @@ namespace SnapOn
             if (this.table != ComboboxDefaultValue.defaultValues.Value)
             {
                 string query = String.Format(@"SELECT *
-                                               FROM {0} ITMS LEFT JOIN {1} VH ON VH.FKItem = ITMS.PKItem", this.itemsTable, this.table);
+                                               FROM {0} ITMS LEFT JOIN {1} VH ON VH.FKItem = ITMS.PKItem
+                                               Order by OrderInserted", this.itemsTable, this.table);
                 data = ControladorBD.opeBD.QueryATab(query);
             }
 
