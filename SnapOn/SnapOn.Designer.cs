@@ -37,8 +37,12 @@
             this.lblItem = new System.Windows.Forms.Label();
             this.cmbItem = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlTipo = new System.Windows.Forms.Panel();
+            this.lblSQL = new System.Windows.Forms.Label();
+            this.lblCuentaEntidad = new System.Windows.Forms.Label();
             this.txtCuentaEntidad = new System.Windows.Forms.TextBox();
+            this.txtQuery = new System.Windows.Forms.TextBox();
             this.lblTitlePnl = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
             this.gvMain = new System.Windows.Forms.DataGridView();
@@ -46,10 +50,6 @@
             this.rbSQL = new System.Windows.Forms.RadioButton();
             this.rbVistas = new System.Windows.Forms.RadioButton();
             this.rbCuentaEntidad = new System.Windows.Forms.RadioButton();
-            this.txtQuery = new System.Windows.Forms.TextBox();
-            this.lblCuentaEntidad = new System.Windows.Forms.Label();
-            this.lblSQL = new System.Windows.Forms.Label();
-            this.bntObtenerTipo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlTipo.SuspendLayout();
             this.pnlGrid.SuspendLayout();
@@ -142,7 +142,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.bntObtenerTipo);
+            this.panel1.Controls.Add(this.btnSubmit);
             this.panel1.Controls.Add(this.pnlTipo);
             this.panel1.Controls.Add(this.lblTitlePnl);
             this.panel1.Controls.Add(this.pnlGrid);
@@ -158,6 +158,16 @@
             this.panel1.Size = new System.Drawing.Size(1223, 725);
             this.panel1.TabIndex = 11;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(1082, 602);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(88, 48);
+            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // pnlTipo
             // 
             this.pnlTipo.Controls.Add(this.lblSQL);
@@ -169,12 +179,40 @@
             this.pnlTipo.Size = new System.Drawing.Size(1144, 119);
             this.pnlTipo.TabIndex = 13;
             // 
+            // lblSQL
+            // 
+            this.lblSQL.AutoSize = true;
+            this.lblSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblSQL.Location = new System.Drawing.Point(64, 35);
+            this.lblSQL.Name = "lblSQL";
+            this.lblSQL.Size = new System.Drawing.Size(80, 16);
+            this.lblSQL.TabIndex = 4;
+            this.lblSQL.Text = "SQL query";
+            // 
+            // lblCuentaEntidad
+            // 
+            this.lblCuentaEntidad.AutoSize = true;
+            this.lblCuentaEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCuentaEntidad.Location = new System.Drawing.Point(32, 35);
+            this.lblCuentaEntidad.Name = "lblCuentaEntidad";
+            this.lblCuentaEntidad.Size = new System.Drawing.Size(112, 16);
+            this.lblCuentaEntidad.TabIndex = 3;
+            this.lblCuentaEntidad.Text = "Cuenta entidad";
+            // 
             // txtCuentaEntidad
             // 
             this.txtCuentaEntidad.Location = new System.Drawing.Point(188, 29);
             this.txtCuentaEntidad.Name = "txtCuentaEntidad";
             this.txtCuentaEntidad.Size = new System.Drawing.Size(393, 20);
             this.txtCuentaEntidad.TabIndex = 2;
+            // 
+            // txtQuery
+            // 
+            this.txtQuery.Location = new System.Drawing.Point(188, 29);
+            this.txtQuery.Multiline = true;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.Size = new System.Drawing.Size(934, 88);
+            this.txtQuery.TabIndex = 0;
             // 
             // lblTitlePnl
             // 
@@ -257,49 +295,11 @@
             this.rbCuentaEntidad.UseVisualStyleBackColor = true;
             this.rbCuentaEntidad.CheckedChanged += new System.EventHandler(this.rbCuentaEntidad_CheckedChanged);
             // 
-            // txtQuery
-            // 
-            this.txtQuery.Location = new System.Drawing.Point(188, 29);
-            this.txtQuery.Multiline = true;
-            this.txtQuery.Name = "txtQuery";
-            this.txtQuery.Size = new System.Drawing.Size(934, 88);
-            this.txtQuery.TabIndex = 0;
-            // 
-            // lblCuentaEntidad
-            // 
-            this.lblCuentaEntidad.AutoSize = true;
-            this.lblCuentaEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCuentaEntidad.Location = new System.Drawing.Point(32, 35);
-            this.lblCuentaEntidad.Name = "lblCuentaEntidad";
-            this.lblCuentaEntidad.Size = new System.Drawing.Size(112, 16);
-            this.lblCuentaEntidad.TabIndex = 3;
-            this.lblCuentaEntidad.Text = "Cuenta entidad";
-            // 
-            // lblSQL
-            // 
-            this.lblSQL.AutoSize = true;
-            this.lblSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblSQL.Location = new System.Drawing.Point(64, 35);
-            this.lblSQL.Name = "lblSQL";
-            this.lblSQL.Size = new System.Drawing.Size(80, 16);
-            this.lblSQL.TabIndex = 4;
-            this.lblSQL.Text = "SQL query";
-            // 
-            // bntObtenerTipo
-            // 
-            this.bntObtenerTipo.Location = new System.Drawing.Point(1082, 602);
-            this.bntObtenerTipo.Name = "bntObtenerTipo";
-            this.bntObtenerTipo.Size = new System.Drawing.Size(88, 48);
-            this.bntObtenerTipo.TabIndex = 14;
-            this.bntObtenerTipo.Text = "Submit";
-            this.bntObtenerTipo.UseVisualStyleBackColor = true;
-            this.bntObtenerTipo.Click += new System.EventHandler(this.bntObtenerTipo_Click);
-            // 
             // SnapOn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 776);
+            this.ClientSize = new System.Drawing.Size(1223, 750);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnConfiguracion);
@@ -342,6 +342,6 @@
         private System.Windows.Forms.Label lblCuentaEntidad;
         private System.Windows.Forms.TextBox txtQuery;
         private System.Windows.Forms.Label lblSQL;
-        private System.Windows.Forms.Button bntObtenerTipo;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

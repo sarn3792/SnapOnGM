@@ -129,9 +129,32 @@ namespace SnapOn
             }
         }
 
-        private void bntObtenerTipo_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (rbCuentaEntidad.Checked) //Create class to get number based on Cuenta entidad
+            {
 
+            } else if(rbSQL.Checked){
+                if (txtQuery.Text.Trim() != String.Empty)
+                {
+                    try
+                    {
+                        new SQLAnalycer(txtQuery.Text.Trim()).ExecuteQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(String.Format("SQL Error: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Favor de ingresar el query a ejecutar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            } else if (rbVistas.Checked)
+            {
+
+            }
         }
     }
 }
