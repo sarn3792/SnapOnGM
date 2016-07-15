@@ -234,8 +234,11 @@
             // 
             // gvMain
             // 
+            this.gvMain.AllowUserToAddRows = false;
+            this.gvMain.AllowUserToDeleteRows = false;
             this.gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvMain.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvMain.Location = new System.Drawing.Point(0, 0);

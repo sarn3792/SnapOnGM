@@ -110,9 +110,10 @@ namespace SnapOn
         {
             if (rbSQL.Checked)
             {
-                lblSQL.Visible = true;
-                txtQuery.Visible = true;
-                txtQuery.Focus();
+                //lblSQL.Visible = true;
+                //txtQuery.Visible = true;
+                //txtQuery.Focus();
+                new SQL().Show();
             }
             else
             {
@@ -135,21 +136,21 @@ namespace SnapOn
             {
 
             } else if(rbSQL.Checked){
-                if (txtQuery.Text.Trim() != String.Empty)
-                {
-                    try
-                    {
-                        new SQLAnalycer(txtQuery.Text.Trim()).ExecuteQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(String.Format("SQL Error: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Favor de ingresar el query a ejecutar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //if (txtQuery.Text.Trim() != String.Empty)
+                //{
+                //    try
+                //    {
+                //        new SQLAnalycer(txtQuery.Text.Trim()).ExecuteQuery();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show(String.Format("SQL Error: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Favor de ingresar el query a ejecutar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
 
             } else if (rbVistas.Checked)
             {
