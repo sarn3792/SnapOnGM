@@ -23,5 +23,13 @@ namespace SnapOn
             else
                 return value.ToString();
         }
+
+        public static void HideDefaultColumnsInGrid(DataGridView grid)
+        {
+            foreach (string item in GridDefaultValue.gridValues)
+            {
+                grid.Columns[item].Visible = false;
+            }
+        }
     }
 }

@@ -50,6 +50,7 @@
             this.rbSQL = new System.Windows.Forms.RadioButton();
             this.rbVistas = new System.Windows.Forms.RadioButton();
             this.rbCuentaEntidad = new System.Windows.Forms.RadioButton();
+            this.btnConfigQuerys = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlTipo.SuspendLayout();
             this.pnlGrid.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // btnConfiguracion
             // 
-            this.btnConfiguracion.Location = new System.Drawing.Point(1028, 12);
+            this.btnConfiguracion.Location = new System.Drawing.Point(1090, 12);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(80, 39);
             this.btnConfiguracion.TabIndex = 0;
@@ -160,7 +161,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(1082, 602);
+            this.btnSubmit.Location = new System.Drawing.Point(1104, 558);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(88, 48);
             this.btnSubmit.TabIndex = 14;
@@ -298,11 +299,22 @@
             this.rbCuentaEntidad.UseVisualStyleBackColor = true;
             this.rbCuentaEntidad.CheckedChanged += new System.EventHandler(this.rbCuentaEntidad_CheckedChanged);
             // 
+            // btnConfigQuerys
+            // 
+            this.btnConfigQuerys.Location = new System.Drawing.Point(966, 12);
+            this.btnConfigQuerys.Name = "btnConfigQuerys";
+            this.btnConfigQuerys.Size = new System.Drawing.Size(80, 39);
+            this.btnConfigQuerys.TabIndex = 12;
+            this.btnConfigQuerys.Text = "Configuración querys";
+            this.btnConfigQuerys.UseVisualStyleBackColor = true;
+            this.btnConfigQuerys.Click += new System.EventHandler(this.btnConfigQuerys_Click);
+            // 
             // SnapOn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 750);
+            this.ClientSize = new System.Drawing.Size(1252, 665);
+            this.Controls.Add(this.btnConfigQuerys);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnConfiguracion);
@@ -346,5 +358,6 @@
         private System.Windows.Forms.TextBox txtQuery;
         private System.Windows.Forms.Label lblSQL;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnConfigQuerys;
     }
 }

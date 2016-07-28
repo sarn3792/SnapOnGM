@@ -63,7 +63,7 @@ namespace SnapOn
             {
                 gvMain.DataSource = (new GetTable(value)).GetDataSource();
 
-                HideDefaultColumnsInGrid();
+                OperacionesGenerales.HideDefaultColumnsInGrid(gvMain);
                 pnlGrid.Visible = true;
 
                 gbTipo.Enabled = true;
@@ -122,14 +122,6 @@ namespace SnapOn
             }
         }
 
-        private void HideDefaultColumnsInGrid()
-        {
-            foreach (string item in GridDefaultValue.gridValues)
-            {
-                gvMain.Columns[item].Visible = false;
-            }
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (rbCuentaEntidad.Checked) //Create class to get number based on Cuenta entidad
@@ -156,6 +148,11 @@ namespace SnapOn
             {
 
             }
+        }
+
+        private void btnConfigQuerys_Click(object sender, EventArgs e)
+        {
+            new ConfiguracionQuerys().Show();
         }
     }
 }
