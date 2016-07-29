@@ -45,15 +45,20 @@ namespace SnapOn
 
             if (value != ComboboxDefaultValue.defaultValues.Value)
             {
-                gvMain.DataSource = (new GetTable(value)).GetDataSource();
+                gvMain2.DataSource = (new GetTable(value)).GetDataSource();
 
-                OperacionesGenerales.HideDefaultColumnsInGrid(gvMain);
+                OperacionesGenerales.HideDefaultColumnsInGrid(gvMain2);
             }
         }
 
         private void btnSQLCompiller_Click(object sender, EventArgs e)
         {
             new SQL().Show();
+        }
+
+        private void btnSaveQuerys_Click(object sender, EventArgs e)
+        {
+            new SaveQuerys(gvMain2).Save();
         }
     }
 }

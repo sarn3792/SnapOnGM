@@ -33,14 +33,15 @@
             this.btnSQLCompiller = new System.Windows.Forms.Button();
             this.lblTitlePnl = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.gvMain = new System.Windows.Forms.DataGridView();
+            this.gvMain2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbGrupos = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSaveQuerys = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMain2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -53,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSaveQuerys);
             this.panel1.Controls.Add(this.btnSQLCompiller);
             this.panel1.Controls.Add(this.lblTitlePnl);
             this.panel1.Controls.Add(this.pnlGrid);
@@ -68,7 +70,7 @@
             // 
             // btnSQLCompiller
             // 
-            this.btnSQLCompiller.Location = new System.Drawing.Point(15, 313);
+            this.btnSQLCompiller.Location = new System.Drawing.Point(15, 355);
             this.btnSQLCompiller.Name = "btnSQLCompiller";
             this.btnSQLCompiller.Size = new System.Drawing.Size(75, 39);
             this.btnSQLCompiller.TabIndex = 21;
@@ -88,25 +90,25 @@
             // 
             // pnlGrid
             // 
-            this.pnlGrid.Controls.Add(this.gvMain);
+            this.pnlGrid.Controls.Add(this.gvMain2);
             this.pnlGrid.Location = new System.Drawing.Point(12, 118);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1144, 177);
+            this.pnlGrid.Size = new System.Drawing.Size(1144, 231);
             this.pnlGrid.TabIndex = 20;
             // 
-            // gvMain
+            // gvMain2
             // 
-            this.gvMain.AllowUserToAddRows = false;
-            this.gvMain.AllowUserToDeleteRows = false;
-            this.gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvMain.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvMain.Location = new System.Drawing.Point(0, 0);
-            this.gvMain.Name = "gvMain";
-            this.gvMain.Size = new System.Drawing.Size(1144, 177);
-            this.gvMain.TabIndex = 1;
+            this.gvMain2.AllowUserToAddRows = false;
+            this.gvMain2.AllowUserToDeleteRows = false;
+            this.gvMain2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvMain2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gvMain2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvMain2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvMain2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvMain2.Location = new System.Drawing.Point(0, 0);
+            this.gvMain2.Name = "gvMain2";
+            this.gvMain2.Size = new System.Drawing.Size(1144, 231);
+            this.gvMain2.TabIndex = 1;
             // 
             // label2
             // 
@@ -150,6 +152,16 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Grupo:";
             // 
+            // btnSaveQuerys
+            // 
+            this.btnSaveQuerys.Location = new System.Drawing.Point(1081, 383);
+            this.btnSaveQuerys.Name = "btnSaveQuerys";
+            this.btnSaveQuerys.Size = new System.Drawing.Size(75, 52);
+            this.btnSaveQuerys.TabIndex = 22;
+            this.btnSaveQuerys.Text = "Guardar";
+            this.btnSaveQuerys.UseVisualStyleBackColor = true;
+            this.btnSaveQuerys.Click += new System.EventHandler(this.btnSaveQuerys_Click);
+            // 
             // ConfiguracionQuerys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,7 +174,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMain2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,11 +186,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitlePnl;
         private System.Windows.Forms.Panel pnlGrid;
-        private System.Windows.Forms.DataGridView gvMain;
+        private System.Windows.Forms.DataGridView gvMain2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbGrupos;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSQLCompiller;
+        private System.Windows.Forms.Button btnSaveQuerys;
     }
 }

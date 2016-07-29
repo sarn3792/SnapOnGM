@@ -34,8 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbGrupos = new System.Windows.Forms.ComboBox();
-            this.lblItem = new System.Windows.Forms.Label();
-            this.cmbItem = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlTipo = new System.Windows.Forms.Panel();
@@ -120,26 +118,6 @@
             this.cmbGrupos.TabIndex = 5;
             this.cmbGrupos.SelectedIndexChanged += new System.EventHandler(this.cmbGrupos_SelectedIndexChanged);
             // 
-            // lblItem
-            // 
-            this.lblItem.AutoSize = true;
-            this.lblItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItem.Location = new System.Drawing.Point(803, 24);
-            this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(41, 16);
-            this.lblItem.TabIndex = 10;
-            this.lblItem.Text = "Item:";
-            // 
-            // cmbItem
-            // 
-            this.cmbItem.FormattingEnabled = true;
-            this.cmbItem.Location = new System.Drawing.Point(806, 44);
-            this.cmbItem.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbItem.Name = "cmbItem";
-            this.cmbItem.Size = new System.Drawing.Size(288, 21);
-            this.cmbItem.TabIndex = 9;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -149,9 +127,7 @@
             this.panel1.Controls.Add(this.pnlGrid);
             this.panel1.Controls.Add(this.gbTipo);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lblItem);
             this.panel1.Controls.Add(this.cmbGrupos);
-            this.panel1.Controls.Add(this.cmbItem);
             this.panel1.Controls.Add(this.cmbCategoria);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 57);
@@ -342,8 +318,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ComboBox cmbGrupos;
-        private System.Windows.Forms.Label lblItem;
-        private System.Windows.Forms.ComboBox cmbItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox gbTipo;
         private System.Windows.Forms.RadioButton rbSQL;

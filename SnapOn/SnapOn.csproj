@@ -71,10 +71,12 @@
     <Compile Include="Controladores\CheckID.cs" />
     <Compile Include="Controladores\ComboboxController.cs" />
     <Compile Include="Controladores\ControladorBD.cs" />
+    <Compile Include="Controladores\GetAllColumnsFromTable.cs" />
     <Compile Include="Controladores\GetItems.cs" />
     <Compile Include="Controladores\GetTable.cs" />
     <Compile Include="Controladores\InsertNewColumn.cs" />
     <Compile Include="Controladores\InsertNewItem.cs" />
+    <Compile Include="Controladores\SaveQuerys.cs" />
     <Compile Include="Controladores\SQLAnalycer.cs" />
     <Compile Include="OperacionesGenerales.cs" />
     <Compile Include="Program.cs" />

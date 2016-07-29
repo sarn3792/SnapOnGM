@@ -27,7 +27,6 @@ namespace SnapOn
         {
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
-            cmbItem.Enabled = false;
             pnlGrid.Visible = false;
             gbTipo.Enabled = false;
             pnlTipo.Enabled = false;
@@ -57,25 +56,17 @@ namespace SnapOn
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             string value = (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString();
-            cmbItem.DataSource = (new GetItems(value)).GetItemByTable(); 
             
             if (value != ComboboxDefaultValue.defaultValues.Value)
             {
                 gvMain.DataSource = (new GetTable(value)).GetDataSource();
 
-                OperacionesGenerales.HideDefaultColumnsInGrid(gvMain);
+                OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
                 pnlGrid.Visible = true;
 
                 gbTipo.Enabled = true;
                 pnlTipo.Visible = true;
                 pnlTipo.Enabled = true;
-
-                cmbItem.Enabled = true;
-                cmbItem.Focus();
-            }
-            else
-            {
-                cmbItem.Enabled = false;
             }
         }
 
