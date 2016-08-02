@@ -58,7 +58,7 @@ namespace SnapOn
 
         private void btnSaveQuerys_Click(object sender, EventArgs e)
         {
-            new SaveQuerys(gvMain2).Save();
+            new ReadGrid(gvMain2).Read();
         }
     }
 }

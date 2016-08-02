@@ -7,23 +7,29 @@ using System.Windows.Forms;
 
 namespace SnapOn
 {
-    public class SaveQuerys
+    public class ReadGrid
     {
         private DataGridView grid;
 
-        public SaveQuerys(DataGridView grid)
+        public ReadGrid(DataGridView grid)
         {
             this.grid = grid;
         }
 
-        public void Save()
+        public void Read()
         {
+            int i;
             foreach (DataGridViewRow row in grid.Rows)
             {
+                i = 0;
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    string value = cell.Value.ToString();
-
+                    string header = grid.Columns[i].HeaderText;
+                    if (cell.Value != null && !cell.Value.Equals(String.Empty))
+                    {
+                        
+                    }
+                    i++;
                 }
             }
         }

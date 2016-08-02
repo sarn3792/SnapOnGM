@@ -76,7 +76,8 @@
     <Compile Include="Controladores\GetTable.cs" />
     <Compile Include="Controladores\InsertNewColumn.cs" />
     <Compile Include="Controladores\InsertNewItem.cs" />
-    <Compile Include="Controladores\SaveQuerys.cs" />
+    <Compile Include="Controladores\ReadGrid.cs" />
+    <Compile Include="Controladores\SaveQuery.cs" />
     <Compile Include="Controladores\SQLAnalycer.cs" />
     <Compile Include="OperacionesGenerales.cs" />
     <Compile Include="Program.cs" />

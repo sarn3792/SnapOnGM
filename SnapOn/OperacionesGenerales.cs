@@ -28,16 +28,16 @@ namespace SnapOn
         {
             foreach (string item in GridDefaultValue.gridValues)
             {
-                grid.Columns.Remove(item);
-                //grid.Columns[item].Visible = false;
+                //grid.Columns.Remove(item);
+                grid.Columns[item].Visible = false;
             }
 
             for (int i = 0, j = 0; i < grid.Columns.Count; i++) //Hide all Query columns
             {
-                if (grid.Columns[j].Name.ToString().Contains("Query"))
+                if (grid.Columns[i].Name.ToString().Contains("Query"))
                 {
-                    //grid.Columns[j].Visible = false;
-                    grid.Columns.Remove(grid.Columns[j].Name.ToString());
+                    grid.Columns[i].Visible = false;
+                    //grid.Columns.Remove(grid.Columns[j].Name.ToString());
                 }
                 else
                 {
