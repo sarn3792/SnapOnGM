@@ -12,8 +12,8 @@ namespace SnapOn
         {
             "PKItem",
             "FKItem",
-            "Fecha",
-            "OrderInserted"
+            "OrderInserted",
+            "Fecha"
         };
     }
 }

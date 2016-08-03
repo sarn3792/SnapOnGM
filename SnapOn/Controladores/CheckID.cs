@@ -16,9 +16,14 @@ namespace SnapOn
             this.table = table;
         }
 
-        public bool Check()
+        public bool Check(bool isMain)
         {
-            string query = String.Format("select * from {0} where PKItem = '{1}' ", table, ID);
+            string query = String.Empty;
+            if(isMain)
+                query = String.Format("select * from {0} where PKItem = '{1}' ", table, ID);
+            else
+                query = String.Format("select * from {0} where FKItem = '{1}' ", table, ID);
+
             return ControladorBD.opeBD.QueryATab(query).Rows.Count > 0 ? true : false;
         }
     }

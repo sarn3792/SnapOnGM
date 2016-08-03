@@ -18,6 +18,20 @@ namespace SnapOn
             this.itemsTable = table + "Items";
         }
 
+        public GetTable(string table, bool isNotMain)
+        {
+            if (isNotMain)
+            {
+                this.itemsTable = table + "Items";
+                this.table = table + "Querys";
+            }
+            else
+            {
+                this.table = table;
+                this.itemsTable = table + "Items";
+            }
+        } 
+
         public DataTable GetDataSource()
         {
             DataTable data = new DataTable();

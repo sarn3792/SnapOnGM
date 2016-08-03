@@ -45,8 +45,7 @@ namespace SnapOn
 
             if (value != ComboboxDefaultValue.defaultValues.Value)
             {
-                gvMain2.DataSource = (new GetTable(value)).GetDataSource();
-
+                gvMain2.DataSource = (new GetTableForQueryes(value, true)).GetDataSource();
                 OperacionesGenerales.HideDefaultColumnsInGrid(gvMain2);
             }
         }
@@ -58,7 +57,14 @@ namespace SnapOn
 
         private void btnSaveQuerys_Click(object sender, EventArgs e)
         {
-            new ReadGrid(gvMain2).Read();
+            try
+            {
+                new ReadGrid(gvMain2, (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString() + "Querys").Read();
+                MessageBox.Show("Querys guardados correctamente", "Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Ha ocurrido la siguiente excepción: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

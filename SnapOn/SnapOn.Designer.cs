@@ -43,17 +43,17 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.lblTitlePnl = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.gvMain = new System.Windows.Forms.DataGridView();
             this.gbTipo = new System.Windows.Forms.GroupBox();
             this.rbSQL = new System.Windows.Forms.RadioButton();
             this.rbVistas = new System.Windows.Forms.RadioButton();
             this.rbCuentaEntidad = new System.Windows.Forms.RadioButton();
             this.btnConfigQuerys = new System.Windows.Forms.Button();
+            this.gvMain = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.pnlTipo.SuspendLayout();
             this.pnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
             this.gbTipo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfiguracion
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(447, 26);
+            this.label2.Location = new System.Drawing.Point(573, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
@@ -91,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 24);
+            this.label1.Location = new System.Drawing.Point(246, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
@@ -101,7 +101,7 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(450, 44);
+            this.cmbCategoria.Location = new System.Drawing.Point(576, 36);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(247, 21);
@@ -111,7 +111,7 @@
             // cmbGrupos
             // 
             this.cmbGrupos.FormattingEnabled = true;
-            this.cmbGrupos.Location = new System.Drawing.Point(123, 42);
+            this.cmbGrupos.Location = new System.Drawing.Point(249, 34);
             this.cmbGrupos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGrupos.Name = "cmbGrupos";
             this.cmbGrupos.Size = new System.Drawing.Size(247, 21);
@@ -209,20 +209,6 @@
             this.pnlGrid.Size = new System.Drawing.Size(1144, 177);
             this.pnlGrid.TabIndex = 12;
             // 
-            // gvMain
-            // 
-            this.gvMain.AllowUserToAddRows = false;
-            this.gvMain.AllowUserToDeleteRows = false;
-            this.gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvMain.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvMain.Location = new System.Drawing.Point(0, 0);
-            this.gvMain.Name = "gvMain";
-            this.gvMain.Size = new System.Drawing.Size(1144, 177);
-            this.gvMain.TabIndex = 1;
-            // 
             // gbTipo
             // 
             this.gbTipo.Controls.Add(this.rbSQL);
@@ -285,6 +271,19 @@
             this.btnConfigQuerys.UseVisualStyleBackColor = true;
             this.btnConfigQuerys.Click += new System.EventHandler(this.btnConfigQuerys_Click);
             // 
+            // gvMain
+            // 
+            this.gvMain.AllowUserToAddRows = false;
+            this.gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvMain.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvMain.Location = new System.Drawing.Point(0, 0);
+            this.gvMain.Name = "gvMain";
+            this.gvMain.Size = new System.Drawing.Size(1144, 177);
+            this.gvMain.TabIndex = 0;
+            // 
             // SnapOn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,9 +301,9 @@
             this.pnlTipo.ResumeLayout(false);
             this.pnlTipo.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).EndInit();
             this.gbTipo.ResumeLayout(false);
             this.gbTipo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,7 +324,6 @@
         private System.Windows.Forms.RadioButton rbCuentaEntidad;
         private System.Windows.Forms.Panel pnlGrid;
         private System.Windows.Forms.TextBox txtCuentaEntidad;
-        private System.Windows.Forms.DataGridView gvMain;
         private System.Windows.Forms.Label lblTitlePnl;
         private System.Windows.Forms.Panel pnlTipo;
         private System.Windows.Forms.Label lblCuentaEntidad;
@@ -333,5 +331,6 @@
         private System.Windows.Forms.Label lblSQL;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnConfigQuerys;
+        private System.Windows.Forms.DataGridView gvMain;
     }
 }

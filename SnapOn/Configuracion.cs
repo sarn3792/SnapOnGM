@@ -108,7 +108,7 @@ namespace SnapOn
             string itemsValue = (cmbItems.SelectedItem as ComboboxItem).Value.ToString();
             if(txtDescripcionColumna.Text.Trim() != String.Empty && gruposValue != ComboboxDefaultValue.defaultValues.Value && itemsValue != ComboboxDefaultValue.defaultValues.Value)
             {
-                if(new InsertNewColumn(itemsValue).Insert(txtDescripcionColumna.Text.Trim()))
+                if(new InsertNewColumn(itemsValue, true).Insert(txtDescripcionColumna.Text.Trim()) && new InsertNewColumnQuerys(itemsValue, false).Insert(txtDescripcionColumna.Text.Trim()))
                 {
                     MessageBox.Show("Columna insertada correctamente", "Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConfiguracionInicial();
@@ -126,7 +126,7 @@ namespace SnapOn
             string itemsValue = (cmbCategoriaFila.SelectedItem as ComboboxItem).Value.ToString();
             if (txtIDFila.Text.Trim() != String.Empty && txtDescripcionFila.Text.Trim() != String.Empty && gruposValue != ComboboxDefaultValue.defaultValues.Value && itemsValue != ComboboxDefaultValue.defaultValues.Value)
             {
-                if(new InsertNewItem(itemsValue).Insert(new Item(txtIDFila.Text.Trim().ToUpper(), txtDescripcionFila.Text.Trim())))
+                if(new InsertNewItem(itemsValue, true).Insert(new Item(txtIDFila.Text.Trim().ToUpper(), txtDescripcionFila.Text.Trim())) && new InsertNewItemQuery(itemsValue, false).Insert(new Item(txtIDFila.Text.Trim().ToUpper(), txtDescripcionFila.Text.Trim())))
                 {
                     MessageBox.Show("Campo insertado correctamente", "Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConfiguracionInicial();

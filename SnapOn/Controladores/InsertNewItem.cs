@@ -9,17 +9,30 @@ namespace SnapOn
     public class InsertNewItem
     {
         private string table;
-        public InsertNewItem(string table)
+        private bool isMain;
+        public InsertNewItem(string table, bool isMain)
         {
-            this.table = table + "Items";
+            this.isMain = isMain;
+            if (isMain)
+                this.table = table + "Items";
+            else
+                this.table = table + "Querys";
         }
 
         public bool Insert(Item item)
         {
-            //get FK from subgroup
-            if (!new CheckID(item.ID, table).Check()) // if ID does not exist
+            if (!new CheckID(item.ID, table).Check(isMain)) // if ID does not exist
             {
-                string query = String.Format("INSERT INTO {0} values ('{1}','{2}')", this.table, item.ID, item.Descripcion);
+                string query = String.Empty; 
+                if (isMain)
+                {
+                    query = String.Format("INSERT INTO {0} values ('{1}','{2}')", this.table, item.ID, item.Descripcion);
+                }
+                else
+                {
+                    query = String.Format("INSERT INTO {0} (FKItem) values ('{1}')", this.table, item.ID);
+                }
+
                 try
                 {
                     ControladorBD.opeBD.IniciarTransaccion();

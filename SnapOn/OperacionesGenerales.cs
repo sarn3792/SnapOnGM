@@ -31,41 +31,26 @@ namespace SnapOn
                 //grid.Columns.Remove(item);
                 grid.Columns[item].Visible = false;
             }
-
-            for (int i = 0, j = 0; i < grid.Columns.Count; i++) //Hide all Query columns
-            {
-                if (grid.Columns[i].Name.ToString().Contains("Query"))
-                {
-                    grid.Columns[i].Visible = false;
-                    //grid.Columns.Remove(grid.Columns[j].Name.ToString());
-                }
-                else
-                {
-                    j++;
-                }
-            }
         }
 
         public static void HideDefaultColumnsInGrid(DataGridView grid)
         {
             foreach (string item in GridDefaultValue.gridValues)
             {
-                grid.Columns.Remove(item);
-                //grid.Columns[item].Visible = false;
+                //grid.Columns.Remove(item);
+                grid.Columns[item].Visible = false;
+            }
+        }
+
+        public static bool IsDefaultColumnName(String columnName)
+        {
+            foreach (string item in GridDefaultValue.gridValues)
+            {
+                if (item.Equals(columnName))
+                    return true;
             }
 
-            for (int i = 0, j=0; i < grid.Columns.Count; i++) //Hide all no Query columns
-            {
-                if (!grid.Columns[j].Name.ToString().Contains("Query") && grid.Columns[j].Name.ToString() != "Item")
-                {
-                    grid.Columns.Remove(grid.Columns[j].Name.ToString());
-                    //grid.Columns[i].Visible = false;
-                }
-                else
-                {
-                    j++;
-                }
-            }
+            return false;
         }
     }
 }

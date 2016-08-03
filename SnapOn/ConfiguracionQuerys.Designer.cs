@@ -30,6 +30,7 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaveQuerys = new System.Windows.Forms.Button();
             this.btnSQLCompiller = new System.Windows.Forms.Button();
             this.lblTitlePnl = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
@@ -38,7 +39,6 @@
             this.cmbGrupos = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSaveQuerys = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain2)).BeginInit();
@@ -67,6 +67,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1168, 447);
             this.panel1.TabIndex = 1;
+            // 
+            // btnSaveQuerys
+            // 
+            this.btnSaveQuerys.Location = new System.Drawing.Point(1081, 383);
+            this.btnSaveQuerys.Name = "btnSaveQuerys";
+            this.btnSaveQuerys.Size = new System.Drawing.Size(75, 52);
+            this.btnSaveQuerys.TabIndex = 22;
+            this.btnSaveQuerys.Text = "Guardar";
+            this.btnSaveQuerys.UseVisualStyleBackColor = true;
+            this.btnSaveQuerys.Click += new System.EventHandler(this.btnSaveQuerys_Click);
             // 
             // btnSQLCompiller
             // 
@@ -151,16 +161,6 @@
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 16;
             this.label1.Text = "Grupo:";
-            // 
-            // btnSaveQuerys
-            // 
-            this.btnSaveQuerys.Location = new System.Drawing.Point(1081, 383);
-            this.btnSaveQuerys.Name = "btnSaveQuerys";
-            this.btnSaveQuerys.Size = new System.Drawing.Size(75, 52);
-            this.btnSaveQuerys.TabIndex = 22;
-            this.btnSaveQuerys.Text = "Guardar";
-            this.btnSaveQuerys.UseVisualStyleBackColor = true;
-            this.btnSaveQuerys.Click += new System.EventHandler(this.btnSaveQuerys_Click);
             // 
             // ConfiguracionQuerys
             // 

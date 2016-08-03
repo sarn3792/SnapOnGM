@@ -74,8 +74,11 @@
     <Compile Include="Controladores\GetAllColumnsFromTable.cs" />
     <Compile Include="Controladores\GetItems.cs" />
     <Compile Include="Controladores\GetTable.cs" />
+    <Compile Include="Controladores\GetTableForQueryes.cs" />
     <Compile Include="Controladores\InsertNewColumn.cs" />
+    <Compile Include="Controladores\InsertNewColumnQuerys.cs" />
     <Compile Include="Controladores\InsertNewItem.cs" />
+    <Compile Include="Controladores\InsertNewItemQuery.cs" />
     <Compile Include="Controladores\ReadGrid.cs" />
     <Compile Include="Controladores\SaveQuery.cs" />
     <Compile Include="Controladores\SQLAnalycer.cs" />
