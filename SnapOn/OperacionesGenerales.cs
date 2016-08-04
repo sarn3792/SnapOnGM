@@ -38,7 +38,8 @@ namespace SnapOn
             foreach (string item in GridDefaultValue.gridValues)
             {
                 //grid.Columns.Remove(item);
-                grid.Columns[item].Visible = false;
+                if(!item.Equals("Fecha"))
+                    grid.Columns[item].Visible = false;
             }
         }
 

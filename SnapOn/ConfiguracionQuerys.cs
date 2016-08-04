@@ -22,6 +22,15 @@ namespace SnapOn
         {
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
+
+            gbTipo.Enabled = false;
+            pnlTipo.Enabled = false;
+            pnlTipo.Visible = false;
+
+            lblCuentaEntidad.Visible = false;
+            txtCuentaEntidad.Visible = false;
+            lblSQL.Visible = false;
+            txtQuery.Visible = false;
         }
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,6 +56,53 @@ namespace SnapOn
             {
                 gvMain2.DataSource = (new GetTableForQueryes(value, true)).GetDataSource();
                 OperacionesGenerales.HideDefaultColumnsInGrid(gvMain2);
+
+                gbTipo.Enabled = true;
+                pnlTipo.Visible = true;
+                pnlTipo.Enabled = true;
+            }
+        }
+
+        private void rbCuentaEntidad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCuentaEntidad.Checked)
+            {
+                lblCuentaEntidad.Visible = true;
+                txtCuentaEntidad.Visible = true;
+                txtCuentaEntidad.Focus();
+            }
+            else
+            {
+                lblCuentaEntidad.Visible = false;
+                txtCuentaEntidad.Visible = false;
+            }
+        }
+
+        private void rbVistas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbVistas.Checked)
+            {
+                pnlTipo.Enabled = false;
+            }
+            else
+            {
+                pnlTipo.Enabled = true;
+            }
+        }
+
+        private void rbSQL_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSQL.Checked)
+            {
+                //lblSQL.Visible = true;
+                //txtQuery.Visible = true;
+                //txtQuery.Focus();
+                //new SQL().Show();
+            }
+            else
+            {
+                lblSQL.Visible = false;
+                txtQuery.Visible = false;
             }
         }
 

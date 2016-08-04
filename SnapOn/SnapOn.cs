@@ -28,14 +28,6 @@ namespace SnapOn
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
             pnlGrid.Visible = false;
-            gbTipo.Enabled = false;
-            pnlTipo.Enabled = false;
-            pnlTipo.Visible = false;
-
-            lblCuentaEntidad.Visible = false;
-            txtCuentaEntidad.Visible = false;
-            lblSQL.Visible = false;
-            txtQuery.Visible = false;
         }
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,84 +53,35 @@ namespace SnapOn
             {
                 gvMain.DataSource = (new GetTable(value)).GetDataSource();
                 OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
-
-                pnlGrid.Visible = true;
-
-                gbTipo.Enabled = true;
-                pnlTipo.Visible = true;
-                pnlTipo.Enabled = true;
-            }
-        }
-
-        private void rbCuentaEntidad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbCuentaEntidad.Checked)
-            {
-                lblCuentaEntidad.Visible = true;
-                txtCuentaEntidad.Visible = true;
-                txtCuentaEntidad.Focus();
-            }
-            else
-            {
-                lblCuentaEntidad.Visible = false;
-                txtCuentaEntidad.Visible = false;
-            }
-        }
-
-        private void rbVistas_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbVistas.Checked)
-            {
-                pnlTipo.Enabled = false;
-            }
-            else
-            {
-                pnlTipo.Enabled = true;
-            }
-        }
-
-        private void rbSQL_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbSQL.Checked)
-            {
-                //lblSQL.Visible = true;
-                //txtQuery.Visible = true;
-                //txtQuery.Focus();
-                new SQL().Show();
-            }
-            else
-            {
-                lblSQL.Visible = false;
-                txtQuery.Visible = false;
             }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (rbCuentaEntidad.Checked) //Create class to get number based on Cuenta entidad
-            {
+            //if (rbCuentaEntidad.Checked) //Create class to get number based on Cuenta entidad
+            //{
 
-            } else if(rbSQL.Checked){
-                //if (txtQuery.Text.Trim() != String.Empty)
-                //{
-                //    try
-                //    {
-                //        new SQLAnalycer(txtQuery.Text.Trim()).ExecuteQuery();
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        MessageBox.Show(String.Format("SQL Error: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Favor de ingresar el query a ejecutar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+            //} else if(rbSQL.Checked){
+            //    //if (txtQuery.Text.Trim() != String.Empty)
+            //    //{
+            //    //    try
+            //    //    {
+            //    //        new SQLAnalycer(txtQuery.Text.Trim()).ExecuteQuery();
+            //    //    }
+            //    //    catch (Exception ex)
+            //    //    {
+            //    //        MessageBox.Show(String.Format("SQL Error: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    //    }
+            //    //}
+            //    //else
+            //    //{
+            //    //    MessageBox.Show("Favor de ingresar el query a ejecutar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    //}
 
-            } else if (rbVistas.Checked)
-            {
+            //} else if (rbVistas.Checked)
+            //{
 
-            }
+            //}
         }
 
         private void btnConfigQuerys_Click(object sender, EventArgs e)
