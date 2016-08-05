@@ -51,8 +51,23 @@ namespace SnapOn
             
             if (value != ComboboxDefaultValue.defaultValues.Value)
             {
-                gvMain.DataSource = (new GetTable(value)).GetDataSource();
-                OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
+                //if(Configuracion == "Querys")
+                //{
+
+                //}
+                try
+                {
+                    gvMain.DataSource = (new GetTable(value)).GetDataSource();
+                    OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
+                }catch (Exception ex)
+                {
+
+                }
+                finally
+                {
+
+                }
+
             }
         }
 

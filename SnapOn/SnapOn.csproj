@@ -56,6 +56,7 @@
     <Compile Include="Beans\ComboboxItem.cs" />
     <Compile Include="Beans\GridDefaultValue.cs" />
     <Compile Include="Beans\Item.cs" />
+    <Compile Include="Beans\Operations.cs" />
     <Compile Include="Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,7 @@
     <Compile Include="Controladores\InsertNewItemQuery.cs" />
     <Compile Include="Controladores\ReadGrid.cs" />
     <Compile Include="Controladores\SaveQuery.cs" />
+    <Compile Include="Controladores\SetValueFromGrid.cs" />
     <Compile Include="Controladores\SQLAnalycer.cs" />
     <Compile Include="OperacionesGenerales.cs" />
     <Compile Include="Program.cs" />
