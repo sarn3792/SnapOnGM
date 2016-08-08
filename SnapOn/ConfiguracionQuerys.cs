@@ -23,14 +23,14 @@ namespace SnapOn
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
 
-            gbTipo.Enabled = false;
-            pnlTipo.Enabled = false;
-            pnlTipo.Visible = false;
+            //gbTipo.Enabled = false;
+            //pnlTipo.Enabled = false;
+            //pnlTipo.Visible = false;
 
             lblCuentaEntidad.Visible = false;
             txtCuentaEntidad.Visible = false;
-            lblSQL.Visible = false;
-            txtQuery.Visible = false;
+
+            pnlGrid2.Visible = false;
         }
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace SnapOn
         {
             if (rbSQL.Checked)
             {
+                pnlGrid2.Visible = true;
                 //lblSQL.Visible = true;
                 //txtQuery.Visible = true;
                 //txtQuery.Focus();
@@ -101,8 +102,7 @@ namespace SnapOn
             }
             else
             {
-                lblSQL.Visible = false;
-                txtQuery.Visible = false;
+                pnlGrid2.Visible = false;
             }
         }
 

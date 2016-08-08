@@ -31,26 +31,26 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTipo = new System.Windows.Forms.Panel();
-            this.lblSQL = new System.Windows.Forms.Label();
             this.lblCuentaEntidad = new System.Windows.Forms.Label();
             this.txtCuentaEntidad = new System.Windows.Forms.TextBox();
-            this.txtQuery = new System.Windows.Forms.TextBox();
             this.gbTipo = new System.Windows.Forms.GroupBox();
             this.rbSQL = new System.Windows.Forms.RadioButton();
             this.rbVistas = new System.Windows.Forms.RadioButton();
             this.rbCuentaEntidad = new System.Windows.Forms.RadioButton();
             this.btnSaveQuerys = new System.Windows.Forms.Button();
             this.btnSQLCompiller = new System.Windows.Forms.Button();
-            this.lblTitlePnl = new System.Windows.Forms.Label();
-            this.pnlGrid = new System.Windows.Forms.Panel();
-            this.gvMain2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbGrupos = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlGrid2 = new System.Windows.Forms.Panel();
+            this.lblTitlePnl = new System.Windows.Forms.Label();
+            this.pnlGrid = new System.Windows.Forms.Panel();
+            this.gvMain2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.pnlTipo.SuspendLayout();
             this.gbTipo.SuspendLayout();
+            this.pnlGrid2.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain2)).BeginInit();
             this.SuspendLayout();
@@ -65,67 +65,41 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlGrid2);
             this.panel1.Controls.Add(this.pnlTipo);
             this.panel1.Controls.Add(this.gbTipo);
             this.panel1.Controls.Add(this.btnSaveQuerys);
-            this.panel1.Controls.Add(this.btnSQLCompiller);
-            this.panel1.Controls.Add(this.lblTitlePnl);
-            this.panel1.Controls.Add(this.pnlGrid);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cmbGrupos);
-            this.panel1.Controls.Add(this.cmbCategoria);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1179, 565);
+            this.panel1.Size = new System.Drawing.Size(1179, 587);
             this.panel1.TabIndex = 1;
             // 
             // pnlTipo
             // 
-            this.pnlTipo.Controls.Add(this.lblSQL);
             this.pnlTipo.Controls.Add(this.lblCuentaEntidad);
             this.pnlTipo.Controls.Add(this.txtCuentaEntidad);
-            this.pnlTipo.Controls.Add(this.txtQuery);
             this.pnlTipo.Location = new System.Drawing.Point(24, 92);
             this.pnlTipo.Name = "pnlTipo";
             this.pnlTipo.Size = new System.Drawing.Size(1105, 39);
             this.pnlTipo.TabIndex = 24;
             // 
-            // lblSQL
-            // 
-            this.lblSQL.AutoSize = true;
-            this.lblSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblSQL.Location = new System.Drawing.Point(55, 9);
-            this.lblSQL.Name = "lblSQL";
-            this.lblSQL.Size = new System.Drawing.Size(80, 16);
-            this.lblSQL.TabIndex = 4;
-            this.lblSQL.Text = "SQL query";
-            // 
             // lblCuentaEntidad
             // 
             this.lblCuentaEntidad.AutoSize = true;
             this.lblCuentaEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCuentaEntidad.Location = new System.Drawing.Point(23, 9);
+            this.lblCuentaEntidad.Location = new System.Drawing.Point(245, 20);
             this.lblCuentaEntidad.Name = "lblCuentaEntidad";
-            this.lblCuentaEntidad.Size = new System.Drawing.Size(112, 16);
+            this.lblCuentaEntidad.Size = new System.Drawing.Size(116, 16);
             this.lblCuentaEntidad.TabIndex = 3;
-            this.lblCuentaEntidad.Text = "Cuenta entidad";
+            this.lblCuentaEntidad.Text = "Cuenta entidad:";
             // 
             // txtCuentaEntidad
             // 
-            this.txtCuentaEntidad.Location = new System.Drawing.Point(179, 3);
+            this.txtCuentaEntidad.Location = new System.Drawing.Point(383, 19);
             this.txtCuentaEntidad.Name = "txtCuentaEntidad";
             this.txtCuentaEntidad.Size = new System.Drawing.Size(393, 20);
             this.txtCuentaEntidad.TabIndex = 2;
-            // 
-            // txtQuery
-            // 
-            this.txtQuery.Location = new System.Drawing.Point(179, 3);
-            this.txtQuery.Multiline = true;
-            this.txtQuery.Name = "txtQuery";
-            this.txtQuery.Size = new System.Drawing.Size(910, 32);
-            this.txtQuery.TabIndex = 0;
             // 
             // gbTipo
             // 
@@ -181,7 +155,7 @@
             // 
             // btnSaveQuerys
             // 
-            this.btnSaveQuerys.Location = new System.Drawing.Point(1092, 503);
+            this.btnSaveQuerys.Location = new System.Drawing.Point(1092, 532);
             this.btnSaveQuerys.Name = "btnSaveQuerys";
             this.btnSaveQuerys.Size = new System.Drawing.Size(75, 52);
             this.btnSaveQuerys.TabIndex = 22;
@@ -191,7 +165,7 @@
             // 
             // btnSQLCompiller
             // 
-            this.btnSQLCompiller.Location = new System.Drawing.Point(24, 503);
+            this.btnSQLCompiller.Location = new System.Drawing.Point(18, 347);
             this.btnSQLCompiller.Name = "btnSQLCompiller";
             this.btnSQLCompiller.Size = new System.Drawing.Size(75, 39);
             this.btnSQLCompiller.TabIndex = 21;
@@ -199,23 +173,79 @@
             this.btnSQLCompiller.UseVisualStyleBackColor = true;
             this.btnSQLCompiller.Click += new System.EventHandler(this.btnSQLCompiller_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(626, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Categoría:";
+            // 
+            // cmbGrupos
+            // 
+            this.cmbGrupos.FormattingEnabled = true;
+            this.cmbGrupos.Location = new System.Drawing.Point(302, 36);
+            this.cmbGrupos.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbGrupos.Name = "cmbGrupos";
+            this.cmbGrupos.Size = new System.Drawing.Size(247, 21);
+            this.cmbGrupos.TabIndex = 14;
+            this.cmbGrupos.SelectedIndexChanged += new System.EventHandler(this.cmbGrupos_SelectedIndexChanged);
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(629, 38);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(247, 21);
+            this.cmbCategoria.TabIndex = 15;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(299, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Grupo:";
+            // 
+            // pnlGrid2
+            // 
+            this.pnlGrid2.Controls.Add(this.lblTitlePnl);
+            this.pnlGrid2.Controls.Add(this.pnlGrid);
+            this.pnlGrid2.Controls.Add(this.label1);
+            this.pnlGrid2.Controls.Add(this.cmbCategoria);
+            this.pnlGrid2.Controls.Add(this.btnSQLCompiller);
+            this.pnlGrid2.Controls.Add(this.cmbGrupos);
+            this.pnlGrid2.Controls.Add(this.label2);
+            this.pnlGrid2.Location = new System.Drawing.Point(24, 137);
+            this.pnlGrid2.Name = "pnlGrid2";
+            this.pnlGrid2.Size = new System.Drawing.Size(1119, 389);
+            this.pnlGrid2.TabIndex = 25;
+            // 
             // lblTitlePnl
             // 
             this.lblTitlePnl.AutoSize = true;
             this.lblTitlePnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblTitlePnl.Location = new System.Drawing.Point(21, 245);
+            this.lblTitlePnl.Location = new System.Drawing.Point(15, 67);
             this.lblTitlePnl.Name = "lblTitlePnl";
             this.lblTitlePnl.Size = new System.Drawing.Size(37, 16);
-            this.lblTitlePnl.TabIndex = 13;
+            this.lblTitlePnl.TabIndex = 21;
             this.lblTitlePnl.Text = "Grid";
             // 
             // pnlGrid
             // 
             this.pnlGrid.Controls.Add(this.gvMain2);
-            this.pnlGrid.Location = new System.Drawing.Point(24, 264);
+            this.pnlGrid.Location = new System.Drawing.Point(18, 86);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1144, 231);
-            this.pnlGrid.TabIndex = 20;
+            this.pnlGrid.Size = new System.Drawing.Size(1144, 255);
+            this.pnlGrid.TabIndex = 22;
             // 
             // gvMain2
             // 
@@ -228,66 +258,25 @@
             this.gvMain2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvMain2.Location = new System.Drawing.Point(0, 0);
             this.gvMain2.Name = "gvMain2";
-            this.gvMain2.Size = new System.Drawing.Size(1144, 231);
+            this.gvMain2.Size = new System.Drawing.Size(1144, 255);
             this.gvMain2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(634, 182);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Categoría:";
-            // 
-            // cmbGrupos
-            // 
-            this.cmbGrupos.FormattingEnabled = true;
-            this.cmbGrupos.Location = new System.Drawing.Point(310, 198);
-            this.cmbGrupos.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbGrupos.Name = "cmbGrupos";
-            this.cmbGrupos.Size = new System.Drawing.Size(247, 21);
-            this.cmbGrupos.TabIndex = 14;
-            this.cmbGrupos.SelectedIndexChanged += new System.EventHandler(this.cmbGrupos_SelectedIndexChanged);
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(637, 200);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(247, 21);
-            this.cmbCategoria.TabIndex = 15;
-            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(307, 180);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Grupo:";
             // 
             // ConfiguracionQuerys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 565);
+            this.ClientSize = new System.Drawing.Size(1179, 587);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Name = "ConfiguracionQuerys";
             this.Text = "Configuracion Querys";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.pnlTipo.ResumeLayout(false);
             this.pnlTipo.PerformLayout();
             this.gbTipo.ResumeLayout(false);
             this.gbTipo.PerformLayout();
+            this.pnlGrid2.ResumeLayout(false);
+            this.pnlGrid2.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvMain2)).EndInit();
             this.ResumeLayout(false);
@@ -299,9 +288,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitlePnl;
-        private System.Windows.Forms.Panel pnlGrid;
-        private System.Windows.Forms.DataGridView gvMain2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbGrupos;
         private System.Windows.Forms.ComboBox cmbCategoria;
@@ -309,13 +295,15 @@
         private System.Windows.Forms.Button btnSQLCompiller;
         private System.Windows.Forms.Button btnSaveQuerys;
         private System.Windows.Forms.Panel pnlTipo;
-        private System.Windows.Forms.Label lblSQL;
         private System.Windows.Forms.Label lblCuentaEntidad;
         private System.Windows.Forms.TextBox txtCuentaEntidad;
-        private System.Windows.Forms.TextBox txtQuery;
         private System.Windows.Forms.GroupBox gbTipo;
         private System.Windows.Forms.RadioButton rbSQL;
         private System.Windows.Forms.RadioButton rbVistas;
         private System.Windows.Forms.RadioButton rbCuentaEntidad;
+        private System.Windows.Forms.Panel pnlGrid2;
+        private System.Windows.Forms.Label lblTitlePnl;
+        private System.Windows.Forms.Panel pnlGrid;
+        private System.Windows.Forms.DataGridView gvMain2;
     }
 }
