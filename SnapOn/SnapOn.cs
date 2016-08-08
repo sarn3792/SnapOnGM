@@ -59,7 +59,9 @@ namespace SnapOn
                 {
                     gvMain.DataSource = (new GetTable(value)).GetDataSource();
                     OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
-                }catch (Exception ex)
+                    (new SetValueFromGrid(gvMain, (new GetTableForQueryes(value, true)).GetDataSource())).Set();
+                }
+                catch (Exception ex)
                 {
 
                 }
