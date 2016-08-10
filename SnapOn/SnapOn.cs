@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -64,37 +65,21 @@ namespace SnapOn
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(String.Format("Ha ocurrido la siguiente excepción: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //if (rbCuentaEntidad.Checked) //Create class to get number based on Cuenta entidad
-            //{
-
-            //} else if(rbSQL.Checked){
-            //    //if (txtQuery.Text.Trim() != String.Empty)
-            //    //{
-            //    //    try
-            //    //    {
-            //    //        new SQLAnalycer(txtQuery.Text.Trim()).ExecuteQuery();
-            //    //    }
-            //    //    catch (Exception ex)
-            //    //    {
-            //    //        MessageBox.Show(String.Format("SQL Error: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    //    }
-            //    //}
-            //    //else
-            //    //{
-            //    //    MessageBox.Show("Favor de ingresar el query a ejecutar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    //}
-
-            //} else if (rbVistas.Checked)
-            //{
-
-            //}
+            try
+            {
+                new SaveReflection(gvMain.DataSource as DataTable, (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString()).Insert();
+                MessageBox.Show("Información guardada correctamente", "Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Ha ocurrido la siguiente excepción: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnConfigQuerys_Click(object sender, EventArgs e)

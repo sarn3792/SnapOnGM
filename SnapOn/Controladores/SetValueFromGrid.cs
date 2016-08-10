@@ -21,24 +21,6 @@ namespace SnapOn
 
         public void Set()
         {
-            //int i = 0;
-            //String fkItem = String.Empty;
-            //foreach (DataGridViewRow row in mainGrid.Rows)
-            //{
-            //    i = 0;
-            //    foreach (DataGridViewCell cell in row.Cells)
-            //    {
-            //        String header = mainGrid.Columns[i].HeaderText;
-            //        if (header.Equals("PKItem"))
-            //            fkItem = cell.Value.ToString();
-
-            //        if (cell.Value != null && !cell.Value.Equals(String.Empty) && cell.Value != System.DBNull.Value && !OperacionesGenerales.IsDefaultColumnName(header) && !header.Equals("Item"))
-            //        { //NOW IS LOPPING THE GRID, SO THAT'S WHY IT DOESN'T CALL THE SEARCH VALUE. IT MUST READ THE GRID
-            //            SearchValue(cell.Value.ToString());
-            //        }
-            //        i++;
-            //    }
-            //}
             String fkItem = String.Empty;
             String header = String.Empty;
             String value = String.Empty;
@@ -55,14 +37,20 @@ namespace SnapOn
                     {
                         //Int32 queryExecuted = Convert.ToInt32(ControladorBD.opeBD.QueryATab(value).Rows[0]);
                         DataTable aux = ControladorBD.opeBD.QueryATab(value);
-                        if(aux.Rows.Count > 1 || aux.Columns.Count > 1) //Query returns more than one result.
+                        if (aux.Rows.Count > 0)
                         {
-                            //error
-                        }
-                        else
+                            if (aux.Rows.Count > 1 || aux.Columns.Count > 1) //Query returns more than one result.
+                            {
+                                //error
+                            }
+                            else
+                            {
+                                //dataTableWithQuerys.Rows[i][j] = aux.Rows[0][0];
+                                this.mainGrid.Rows[i].Cells[j].Value = Convert.ToDecimal(aux.Rows[0][0]);
+                            }
+                        }else
                         {
-                            //dataTableWithQuerys.Rows[i][j] = aux.Rows[0][0];
-                            this.mainGrid.Rows[i].Cells[j].Value = Convert.ToDecimal(aux.Rows[0][0]);
+                            //No rows
                         }
                     }
                 }
