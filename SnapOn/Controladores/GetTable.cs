@@ -14,7 +14,7 @@ namespace SnapOn
 
         public GetTable(string table)
         {
-            this.table = table;
+            this.table = table + "Layout";
             this.itemsTable = table + "Items";
         }
 
@@ -27,7 +27,7 @@ namespace SnapOn
             }
             else
             {
-                this.table = table;
+                this.table = table + "Layout"; ;
                 this.itemsTable = table + "Items";
             }
         } 

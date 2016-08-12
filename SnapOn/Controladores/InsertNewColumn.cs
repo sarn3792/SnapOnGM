@@ -10,10 +10,12 @@ namespace SnapOn
     {
         private string table;
         private bool isMoney;
+        private string tableLayout;
 
         public InsertNewColumn(string table, bool isMoney)
         {
             this.table = table;
+            this.tableLayout = table + "Layout";
             this.isMoney = isMoney;
         }
 
@@ -23,12 +25,18 @@ namespace SnapOn
             {
 
                 String query = String.Empty;
+                String queryLayout = String.Empty;
+
                 if (isMoney)
                 {
                     query = String.Format(@"IF NOT EXISTS 
                                                (SELECT 1 FROM syscolumns sc JOIN sysobjects so ON sc.id = so.id WHERE so.Name = '{0}' AND sc.Name = '{1}') 
                                                 BEGIN ALTER TABLE {2} ADD {3} MONEY NULL 
                                                 END", this.table, descriptionColumn, this.table, descriptionColumn);
+                    queryLayout = String.Format(@"IF NOT EXISTS 
+                                               (SELECT 1 FROM syscolumns sc JOIN sysobjects so ON sc.id = so.id WHERE so.Name = '{0}' AND sc.Name = '{1}') 
+                                                BEGIN ALTER TABLE {2} ADD {3} MONEY NULL 
+                                                END", this.tableLayout, descriptionColumn, this.tableLayout, descriptionColumn);
                 } else
                 {
                     query = String.Format(@"IF NOT EXISTS 
@@ -38,6 +46,9 @@ namespace SnapOn
                 }
 
                 ControladorBD.opeBD.IniciarTransaccion(); //begin tran
+                if(isMoney)
+                    ControladorBD.opeBD.EjeQuery(queryLayout);
+
                 ControladorBD.opeBD.EjeQuery(query);
 
                 ControladorBD.opeBD.FinalizarTransaccion(); //commit
