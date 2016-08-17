@@ -13,6 +13,7 @@ namespace SnapOn
 {
     public partial class SnapOn : Form
     {
+        private String periodo = String.Empty;
         public SnapOn()
         {
             InitializeComponent();
@@ -28,7 +29,10 @@ namespace SnapOn
         {
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
+            txtPeriodo.Enabled = false;
             pnlGrid.Visible = false;
+            btnSubmit.Enabled = false;
+            cmbGrupos.Focus();
         }
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +65,8 @@ namespace SnapOn
                     gvMain.DataSource = (new GetTable(value)).GetDataSource();
                     (new SetValueFromGrid(gvMain, (new GetTableForQueryes(value, true)).GetDataSource())).Set();
                     OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
+                    txtPeriodo.Enabled = true;
+                    txtPeriodo.Focus();
                     pnlGrid.Visible = true;
                 }
                 catch (Exception ex)
@@ -74,9 +80,10 @@ namespace SnapOn
         {
             try
             {
-                new SaveReflection(gvMain.DataSource as DataTable, (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString()).Insert();
+                new SaveReflection(gvMain.DataSource as DataTable, (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString(), periodo).Insert();
                 MessageBox.Show("Información guardada correctamente", "Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(String.Format("Ha ocurrido la siguiente excepción: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,6 +92,37 @@ namespace SnapOn
         private void btnConfigQuerys_Click(object sender, EventArgs e)
         {
             new ConfiguracionQuerys().Show();
+        }
+
+        private void txtPeriodo_Leave(object sender, EventArgs e)
+        {
+            String[] date = txtPeriodo.Text.Split('-');
+            int year;
+            int month;
+
+            if (date[0] != null && date[0].Trim() != String.Empty && date[1] != null && date[1].Trim() != String.Empty)
+            {
+                year = Convert.ToInt32(date[0]);
+                month = Convert.ToInt32(date[1]);
+                if (year <= DateTime.Now.Year)
+                {
+                    if (!OperacionesGenerales.ValidateMonth(month))
+                    {
+                        MessageBox.Show("Mes inválido, favor de insertarlo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtPeriodo.Focus();
+                    }
+                    else
+                    {
+                        periodo = date[0] + date[1];
+                        btnSubmit.Enabled = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Año inválido, favor de insertarlo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPeriodo.Focus();
+                }
+            }
         }
     }
 }

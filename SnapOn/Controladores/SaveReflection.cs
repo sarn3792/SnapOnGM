@@ -12,10 +12,13 @@ namespace SnapOn
     {
         private DataTable grid;
         private String table;
-        public SaveReflection(DataTable information, String table)
+        private String period;
+
+        public SaveReflection(DataTable information, String table, String period)
         {
             this.grid = information;
             this.table = table;
+            this.period = period;
         }
 
         public void Insert()
@@ -59,9 +62,9 @@ namespace SnapOn
                 if (flag)
                 {
                     //query = query.Remove(query.Length - 1);
-                    query += String.Format(" Fecha) ");
+                    query += String.Format(" Fecha, Periodo) ");
                     //queryLast = queryLast.Remove(queryLast.Length - 1);
-                    queryLast += String.Format("'{0}') ", DateTime.Now.ToString("yyyy-MM-dd HH:mm"));
+                    queryLast += String.Format("'{0}', '{1}') ", DateTime.Now.ToString("yyyy-MM-dd HH:mm"), this.period);
                     flag = false;
 
                     try

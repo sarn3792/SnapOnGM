@@ -53,5 +53,10 @@ namespace SnapOn
 
             return false;
         }
+
+        public static bool ValidateMonth(int month)
+        {
+            return month >= 0 && month <= 12 ? true : false;
+        }
     }
 }
