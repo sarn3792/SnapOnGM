@@ -197,6 +197,7 @@
             this.gvMain.Name = "gvMain";
             this.gvMain.Size = new System.Drawing.Size(1144, 177);
             this.gvMain.TabIndex = 3;
+            this.gvMain.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gvMain_DataError);
             // 
             // btnConfigQuerys
             // 

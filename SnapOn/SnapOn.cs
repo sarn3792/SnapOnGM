@@ -124,5 +124,10 @@ namespace SnapOn
                 }
             }
         }
+
+        private void gvMain_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Data inválido, favor de ingresar sólo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

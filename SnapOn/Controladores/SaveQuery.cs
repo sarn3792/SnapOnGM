@@ -25,8 +25,8 @@ namespace SnapOn
         public void Save()
         {
             String query = String.Empty; 
-            query = String.Format(@"UPDATE {0} SET {1}='{2}' WHERE FKItem = '{3}' ", tableName, columnName, columnValue, fkItem);
-            //MODIFY IT TO ALLOW ''
+            query = String.Format(@"SET QUOTED_IDENTIFIER OFF 
+                                    UPDATE {0} SET {1}=""{2}"" WHERE FKItem = '{3}' ", tableName, columnName, columnValue, fkItem);
 
             try
             {
