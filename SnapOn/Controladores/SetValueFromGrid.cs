@@ -52,7 +52,8 @@ namespace SnapOn
                             else
                             {
                                 //dataTableWithQuerys.Rows[i][j] = aux.Rows[0][0];
-                                this.mainGrid.Rows[i].Cells[j].Value = Convert.ToDecimal(aux.Rows[0][0]);
+                                if(aux.Rows[0][0] != null && !aux.Rows[0][0].Equals(DBNull.Value))
+                                    this.mainGrid.Rows[i].Cells[j].Value = Convert.ToDecimal(aux.Rows[0][0]);
                             }
                         }else
                         {
