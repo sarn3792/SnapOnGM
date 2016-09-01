@@ -12,11 +12,13 @@ namespace SnapOn
     {
         private DataGridView mainGrid;
         private DataTable dataTableWithQuerys;
+        private String periodo;
 
-        public SetValueFromGrid(DataGridView main, DataTable gridWithAllQuerys)
+        public SetValueFromGrid(DataGridView main, DataTable gridWithAllQuerys, String periodo)
         {
             this.mainGrid = main;
             this.dataTableWithQuerys = gridWithAllQuerys;
+            this.periodo = periodo;
         }
 
         public void Set()
@@ -36,6 +38,10 @@ namespace SnapOn
                     if (value != null && !value.Equals(String.Empty) && !value.Equals(DBNull.Value) && !OperacionesGenerales.IsDefaultColumnName(header) && !header.Equals("Item"))
                     {
                         //Int32 queryExecuted = Convert.ToInt32(ControladorBD.opeBD.QueryATab(value).Rows[0]);
+                        if (value.Contains("@Periodo")) //this variable was added in query. It's replaced with the period inserted by the user
+                        {
+                            value = value.Replace("@Periodo", periodo);
+                        }
                         DataTable aux = ControladorBD.opeBD.QueryATab(value);
                         if (aux.Rows.Count > 0)
                         {

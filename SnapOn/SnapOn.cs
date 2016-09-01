@@ -29,10 +29,10 @@ namespace SnapOn
         {
             cmbGrupos.DataSource = ComboboxController.ObtenerDatosGrupos();
             cmbCategoria.Enabled = false;
-            txtPeriodo.Enabled = false;
             pnlGrid.Visible = false;
             btnSubmit.Enabled = false;
-            cmbGrupos.Focus();
+            //cmbGrupos.Focus();
+            txtPeriodo.Focus();
         }
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,11 +63,12 @@ namespace SnapOn
                 try
                 {
                     gvMain.DataSource = (new GetTable(value)).GetDataSource();
-                    (new SetValueFromGrid(gvMain, (new GetTableForQueryes(value, true)).GetDataSource())).Set();
+                    (new SetValueFromGrid(gvMain, (new GetTableForQueryes(value, true)).GetDataSource(), periodo)).Set();
                     OperacionesGenerales.HideDefaultColumnsInMainGrid(gvMain);
                     txtPeriodo.Enabled = true;
                     txtPeriodo.Focus();
                     pnlGrid.Visible = true;
+                    btnSubmit.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -94,7 +95,13 @@ namespace SnapOn
             new ConfiguracionQuerys().Show();
         }
 
-        private void txtPeriodo_Leave(object sender, EventArgs e)
+
+        private void gvMain_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Data inválido, favor de ingresar sólo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void txtPeriodo_Leave_1(object sender, EventArgs e)
         {
             String[] date = txtPeriodo.Text.Split('-');
             int year;
@@ -114,7 +121,6 @@ namespace SnapOn
                     else
                     {
                         periodo = date[0] + date[1];
-                        btnSubmit.Enabled = true;
                     }
                 }
                 else
@@ -123,11 +129,6 @@ namespace SnapOn
                     txtPeriodo.Focus();
                 }
             }
-        }
-
-        private void gvMain_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            MessageBox.Show("Data inválido, favor de ingresar sólo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
