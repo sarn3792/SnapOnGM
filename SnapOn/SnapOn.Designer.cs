@@ -35,14 +35,14 @@
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbGrupos = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPeriodo = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblTitlePnl = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
             this.gvMain = new System.Windows.Forms.DataGridView();
             this.btnConfigQuerys = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPeriodo = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
@@ -128,6 +128,35 @@
             this.panel1.Size = new System.Drawing.Size(1223, 725);
             this.panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(190, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "(aaaa-mm):";
+            // 
+            // txtPeriodo
+            // 
+            this.txtPeriodo.Location = new System.Drawing.Point(134, 33);
+            this.txtPeriodo.Mask = "0000-00";
+            this.txtPeriodo.Name = "txtPeriodo";
+            this.txtPeriodo.Size = new System.Drawing.Size(100, 20);
+            this.txtPeriodo.TabIndex = 0;
+            this.txtPeriodo.Leave += new System.EventHandler(this.txtPeriodo_Leave_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(131, 17);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Periodo\r\n";
+            // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(1104, 318);
@@ -179,35 +208,6 @@
             this.btnConfigQuerys.Text = "Configuración querys";
             this.btnConfigQuerys.UseVisualStyleBackColor = true;
             this.btnConfigQuerys.Click += new System.EventHandler(this.btnConfigQuerys_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(190, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "(aaaa-mm):";
-            // 
-            // txtPeriodo
-            // 
-            this.txtPeriodo.Location = new System.Drawing.Point(134, 33);
-            this.txtPeriodo.Mask = "0000-00";
-            this.txtPeriodo.Name = "txtPeriodo";
-            this.txtPeriodo.Size = new System.Drawing.Size(100, 20);
-            this.txtPeriodo.TabIndex = 0;
-            this.txtPeriodo.Leave += new System.EventHandler(this.txtPeriodo_Leave_1);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(131, 17);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 16);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Periodo\r\n";
             // 
             // SnapOn
             // 

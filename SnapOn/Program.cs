@@ -17,6 +17,7 @@ namespace SnapOn
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SnapOn());
+            //Application.Run(new ArchivoTxt());
         }
     }
 }

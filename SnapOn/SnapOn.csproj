@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchivoTxt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchivoTxt.Designer.cs">
+      <DependentUpon>ArchivoTxt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Beans\ComboboxDefaultValue.cs" />
     <Compile Include="Beans\ComboboxItem.cs" />
     <Compile Include="Beans\GridDefaultValue.cs" />
@@ -72,7 +78,10 @@
     <Compile Include="Controladores\CheckID.cs" />
     <Compile Include="Controladores\ComboboxController.cs" />
     <Compile Include="Controladores\ControladorBD.cs" />
+    <Compile Include="Controladores\GenerateTxt.cs" />
     <Compile Include="Controladores\GetAllColumnsFromTable.cs" />
+    <Compile Include="Controladores\GetAllDataFromTables.cs" />
+    <Compile Include="Controladores\GetAllTables.cs" />
     <Compile Include="Controladores\GetItems.cs" />
     <Compile Include="Controladores\GetTable.cs" />
     <Compile Include="Controladores\GetTableForQueryes.cs" />
@@ -102,6 +111,9 @@
     </Compile>
     <Compile Include="Tablas\Grupos.cs" />
     <Compile Include="Tablas\Tablas.cs" />
+    <EmbeddedResource Include="ArchivoTxt.resx">
+      <DependentUpon>ArchivoTxt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,7 +13,8 @@ namespace SnapOn
 {
     public partial class SnapOn : Form
     {
-        private String periodo = String.Empty;
+        public static String periodo = String.Empty;
+
         public SnapOn()
         {
             InitializeComponent();
@@ -83,6 +84,7 @@ namespace SnapOn
             {
                 new SaveReflection(gvMain.DataSource as DataTable, (cmbCategoria.SelectedItem as ComboboxItem).Value.ToString(), periodo).Insert();
                 MessageBox.Show("Información guardada correctamente", "Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new ArchivoTxt().Show();
             }
             catch (Exception ex)
             {

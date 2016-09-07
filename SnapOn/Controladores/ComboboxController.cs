@@ -20,7 +20,9 @@ namespace SnapOn
                     dataSourceCmb.Add(new ComboboxItem(OperacionesGenerales.GetEnumDescription(items), items.ToString()));
                 }
 
-            } else if(item.Value == Grupos.GruposBD.Estadisticas_personal.ToString()){
+            }
+            else if (item.Value == Grupos.GruposBD.Estadisticas_personal.ToString())
+            {
                 foreach (TablasBD.EstadisticasPersonal items in Enum.GetValues(typeof(TablasBD.EstadisticasPersonal)))
                 {
                     dataSourceCmb.Add(new ComboboxItem(OperacionesGenerales.GetEnumDescription(items), items.ToString()));
